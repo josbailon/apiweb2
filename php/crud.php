@@ -35,11 +35,11 @@ function eliminarCliente($id_cliente) {
 }
 
 // Función para crear un nuevo vehículo
-function crearVehiculo($id_cliente, $nombre_cliente, $modelo, $marca, $color) {
+function crearVehiculo($id_cliente,  $modelo, $marca, $color) {
     global $conex;
 
     $stmt = $conex->prepare("INSERT INTO vehiculo (id_cliente, nombre_cliente, modelo, marca, color) VALUES (?, ?, ?, ?, ?)");
-    $stmt->execute([$id_cliente, $nombre_cliente, $modelo, $marca, $color]);
+    $stmt->execute([$id_cliente, $modelo, $marca, $color]);
 }
 
 // Función para obtener todos los vehículos
